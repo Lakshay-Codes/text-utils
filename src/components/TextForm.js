@@ -3,7 +3,6 @@ import PropTypes from 'prop-types'
 function Textform(props) {
     const [text,setText] =useState("Enter Text Here");
     const handleUpClick=(value)=>{
-        console.log("Uppercase was clicked "+text);
         setText(text.toUpperCase());
     }
 
