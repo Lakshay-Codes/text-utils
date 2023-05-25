@@ -17,6 +17,13 @@ function Textform(props) {
         <textarea  className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8" />
         </div>
         <button className="btn btn-primary" onClick={handleUpClick}>Convert to Uppercase</button>
+        <div className="container my-3">
+            <h4>Your Text Summary</h4>
+            <p>Your text contains <b>{text.length===0? 0 : text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>
+            <p>{(text.length===0? 0 : text.split(" ").length)*0.008} Minutes Read</p>
+            <h2>Preview</h2>
+            <p>{text}</p>
+        </div>
     </>
   )
 }
