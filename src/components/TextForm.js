@@ -14,16 +14,25 @@ function Textform(props) {
     const handleOnChange=(e)=>{
        setText(e.target.value);
     }
-
+    const handleCopyClick=()=>{
+       var text =document.getElementById("myBox");
+       navigator.clipboard.writeText(text.value);
+    }
+    const handleExtraSpacesClick=()=>{
+       let newText = text.split(/[ ]+/);
+       setText(newText.join(" "));
+    }
     return (
     <>
-        <div className="mb-3">
+        <div className="mb-3 my-5">
         <label htmlFor="myBox" className="form-label">{props.heading}</label>
-        <textarea  className="form-control" id="myBox" value={text} onChange={handleOnChange} rows="8" />
+        <textarea  className="form-control my-2" id="myBox" value={text} onChange={handleOnChange} rows="8" />
         </div>
         <button className="btn btn-primary mx-2" onClick={handleUpClick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleLowClick}>Convert to Uppercase</button>
         <button className="btn btn-primary mx-2" onClick={handleClearClick}>Clear Text</button>
+        <button className="btn btn-primary mx-2" onClick={handleCopyClick}>Copy Text</button>
+        <button className="btn btn-primary mx-2" onClick={handleExtraSpacesClick}>Remove Extra Spaces</button>
         <div className="container my-3">
             <h4>Your Text Summary</h4>
             <p>Your text contains <b>{text.length===0? 0 : text.split(" ").length}</b> words and <b>{text.length}</b> characters</p>

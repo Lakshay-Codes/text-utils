@@ -22,6 +22,7 @@ function Navbar(props) {
               <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
               <button className="btn btn-outline-success" type="submit">Search</button>
             </form> */}
+            <button className="btn btn-primary" onClick={props.onclick}>{props.btntext}</button>
           </div>
         </div>
       </nav>
@@ -32,10 +33,12 @@ export default Navbar
 
 Navbar.propTypes={
   title: PropTypes.string.isRequired,
-  aboutText: PropTypes.string.isRequired
+  aboutText: PropTypes.string.isRequired,
+  onclick: PropTypes.func.isRequired
 }
 
 Navbar.defaultProps={
   title: "title text here",
-  aboutText: "about text here"
+  aboutText: "about text here",
+  onclick: () =>{}
 }
