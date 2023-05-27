@@ -1,33 +1,21 @@
-import React,{useState} from 'react'
+import React, { useState } from 'react';
 import './App.css';
 // import About from './components/About';
 import Navbar from './components/Navbar';
 import TextForm from './components/TextForm';
 
 function App() {
-  const [myStyle,setMyStyle] = useState({
-    color: 'white',
-    backgroundColor: 'black'
-  })
-  const [btnText,setBtnText] = useState("Enable light mode");
+  const [mode,setMode] = useState('dark');
   const toggleMode=()=>{
-    if(btnText==='Enable dark mode'){
-      setBtnText('Enable light mode');
-      setMyStyle({
-        color: 'white',
-        backgroundColor: 'black'
-      })
+    if(mode==='light'){
+      setMode('dark');
     }else{
-      setBtnText('Enable dark mode');
-      setMyStyle({
-        color: 'black',
-        backgroundColor: 'white'
-      });
+      setMode('light');
     }
   }
   return (
-    <div style={myStyle}>
-        <Navbar title="Text Utils" aboutText="About Text Utils" onclick={toggleMode}  btntext={btnText} />
+    <div>
+        <Navbar title="Text Utils" aboutText="About Text Utils" toggleMode={toggleMode} mode={mode} />
         <div className="container my-3">
           <TextForm heading="Enter the text below" />
         </div>
