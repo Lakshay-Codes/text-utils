@@ -4,23 +4,28 @@ function Textform(props) {
     const [text,setText] =useState("");
     const handleUpClick=(value)=>{
         setText(text.toUpperCase());
+        props.showAlert("Converted to upper case!","success");
     }
     const handleLowClick=(value)=>{
         setText(text.toLowerCase());
+        props.showAlert("Converted to lower case!","success");
     }
     const handleClearClick=(value)=>{
         setText("");
+        props.showAlert("Text cleared","success");
     }
     const handleOnChange=(e)=>{
-       setText(e.target.value);
+        setText(e.target.value);
     }
     const handleCopyClick=()=>{
-       var text =document.getElementById("myBox");
-       navigator.clipboard.writeText(text.value);
+        var text =document.getElementById("myBox");
+        navigator.clipboard.writeText(text.value);
+        props.showAlert("Copied to clipboard", "success");
     }
     const handleExtraSpacesClick=()=>{
-       let newText = text.split(/[ ]+/);
-       setText(newText.join(" "));
+        let newText = text.split(/[ ]+/);
+        setText(newText.join(" "));
+        props.showAlert("Extra spaces removed!","success");
     }
     return (
     <>
