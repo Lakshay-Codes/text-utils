@@ -22,9 +22,17 @@ function App() {
     if(mode==='light'){
       setMode('dark');
       document.body.style.backgroundColor='#03052adb';
+      document.title = "Text Utils-Dark Mode"
       showAlert("Dark mode has been enabled","success");
+      // setInterval(() => {
+      //   document.title="TextUtils is amazing";
+      // }, 1500);
+      // setInterval(() => {
+      //   document.title="Bookmark TextUtils now!";
+      // }, 2000);
     }else{
       setMode('light');
+      document.title = "Text Utils"
       document.body.style.backgroundColor='white';
       showAlert("Light mode has been enabled","success");
     }
