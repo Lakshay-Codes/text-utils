@@ -33,15 +33,15 @@ function Textform(props) {
         <label htmlFor="myBox" className="form-label" style={{color:props.mode==='dark'? 'white' : 'black'}}>{props.heading}</label>
         <textarea  className="form-control my-2 my-1" id="myBox" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'? 'black' : 'white',color:props.mode==='dark'? 'white' : 'black'}} rows="8" />
         </div>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Uppercase</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>Copy Text</button>
-        <button className="btn btn-primary mx-2 my-1" onClick={handleExtraSpacesClick}>Remove Extra Spaces</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>Copy Text</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpacesClick}>Remove Extra Spaces</button>
         <div className={`container my-3 text-${props.mode==='light'? 'dark' : 'light'}`}  >
             <h4 >Your Text Summary</h4>
             <p>Your text contains <b>{text.split(" ").filter((element)=>{return element.length!==0}).length}</b> words and <b>{text.length}</b> characters</p>
-            <p>{(text.split(" ").length)*0.008} Minutes Read</p>
+            <p>{(text.split(" ").filter((element)=>{return element.length!==0}).length)*0.008} Minutes Read</p>
             <h2>Preview</h2>
             <p>{text.length===0? "Enter text in the above text area to see the preview" : text}</p>
         </div>

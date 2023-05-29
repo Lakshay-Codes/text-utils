@@ -26,7 +26,7 @@ function App() {
     if(mode==='light'){
       setMode('dark');
       document.body.style.backgroundColor='#03052adb';
-      document.title = "Text Utils-Dark Mode"
+      // document.title = "Text Utils-Dark Mode" 
       showAlert("Dark mode has been enabled","success");
       // setInterval(() => {
       //   document.title="TextUtils is amazing";
