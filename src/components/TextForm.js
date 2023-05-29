@@ -34,7 +34,7 @@ function Textform(props) {
         <textarea  className="form-control my-2 my-1" id="myBox" value={text} onChange={handleOnChange} style={{backgroundColor: props.mode==='dark'? 'black' : 'white',color:props.mode==='dark'? 'white' : 'black'}} rows="8" />
         </div>
         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleUpClick}>Convert to Uppercase</button>
-        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Uppercase</button>
+        <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleLowClick}>Convert to Lowercase</button>
         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleClearClick}>Clear Text</button>
         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleCopyClick}>Copy Text</button>
         <button disabled={text.length===0} className="btn btn-primary mx-2 my-1" onClick={handleExtraSpacesClick}>Remove Extra Spaces</button>
